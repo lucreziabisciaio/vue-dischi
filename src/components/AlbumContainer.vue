@@ -1,8 +1,8 @@
 <template>
-    <div class="container d-flex flex-wrap justify-content-center">
+    <div class="album_container container d-flex flex-wrap justify-content-center">
         <div
-            v-for = "(album, index) in albumList"
-            :key = "index">
+            v-for="(album, index) in albumList"
+            :key="index">
 
             <album-card :album = "album" />
         </div>
@@ -26,5 +26,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.album_container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 </style>
