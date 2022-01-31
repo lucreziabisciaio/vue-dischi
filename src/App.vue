@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-container />
-    <album-container />
+    <album-container :albumList="albumList" />
   </div>
 </template>
 
@@ -24,8 +24,8 @@ export default {
     }
   },
   mounted() {
-    axios.get('https://api.sampleapis.com/rickandmorty/characters').then((response) => {
-      this.albumList = response.data
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
+      this.albumList = response.data.response
     })
   }
 }

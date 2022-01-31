@@ -1,6 +1,11 @@
 <template>
     <div class="container-fluid">
-        <album-card />
+        <div
+            v-for = "(album, index) in albumList"
+            :key = "index">
+
+            <album-card :album = "album" />
+        </div>
     </div>
 </template>
 
@@ -10,6 +15,10 @@ import AlbumCard from './AlbumCard.vue'
 export default {
     components: {
         AlbumCard,
+
+    },
+    props: {
+      albumList: Array,
 
     },
     
