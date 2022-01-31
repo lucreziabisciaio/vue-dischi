@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div class="container d-flex flex-wrap justify-content-center">
         <div
             v-for = "(album, index) in albumList"
             :key = "index">
