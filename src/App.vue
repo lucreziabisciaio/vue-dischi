@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-container />
-    <search-genre @search="filterGenre" />
+    <search-genre @search="filterGenre" :genreOptions="getGenreValue" />
     <album-container v-if="loader" :albumList="albumListFiltered" />
     <loader-box v-else />
   </div>
@@ -35,6 +35,17 @@ export default {
       this.albumListFiltered = this.albumList.filter((album) => {
         return album.genre.toLowerCase() === k || k === 'all';
       })
+    }
+  },
+  computed: {
+    getGenreValue() {
+      const genreValues = [];
+      this.albumList.forEach((element) => {
+        if(!genreValues.includes(element.genre.toLowerCase())) {
+          genreValues.push(element.genre.toLowerCase())
+        }
+      })
+      return genreValues;
     }
   },
   mounted() {

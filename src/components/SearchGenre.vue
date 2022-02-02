@@ -6,10 +6,13 @@
             
             <option disabled value="">Seleziona genere</option>
             <option value="all">All</option>
-            <option value="rock">Rock</option>
-            <option value="pop">Pop</option>
-            <option value="jazz">Jazz</option>
-            <option value="metal">Metal</option>
+            <option 
+                v-for="(genre, i) in genreOptions"
+                :key="i"
+                :value="genre">
+            
+                {{genre}}
+                </option>
         </select>
     </div>
 </template>
@@ -20,6 +23,9 @@ export default {
         return {
             keywordGenre: 'all'
         } 
+    },
+    props: {
+        genreOptions: Array
     },
 }
 </script>
