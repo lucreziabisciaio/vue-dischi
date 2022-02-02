@@ -33,7 +33,7 @@ export default {
   methods: {
     filterGenre(k) {
       this.albumListFiltered = this.albumList.filter((album) => {
-        return album.genre.toLowerCase().includes(k);
+        return album.genre.toLowerCase() === k || k === 'all';
       })
     }
   },
