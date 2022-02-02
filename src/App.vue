@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <header-container />
-    <search-genre @search="filterGenre" :genreOptions="getGenreValue" />
-    <search-artist @search="filterArtist" :artistOptions="getArtistValue" />
+    <select-container 
+      @selectGenre="filterGenre" :genreOptions="getGenreValue"
+      @selectArtist="filterArtist" :artistOptions="getArtistValue"/>
     <album-container v-if="loader" :albumList="albumListFiltered" />
     <loader-box v-else />
   </div>
@@ -13,8 +14,7 @@ import axios from 'axios'
 import HeaderContainer from './components/HeaderContainer.vue'
 import AlbumContainer from './components/AlbumContainer.vue'
 import LoaderBox from './components/LoaderBox.vue'
-import SearchGenre from './components/SearchGenre.vue'
-import SearchArtist from './components/SearchArtist.vue'
+import SelectContainer from './components/SelectContainer.vue'
 
 export default {
   name: 'App',
@@ -22,8 +22,7 @@ export default {
     HeaderContainer,
     AlbumContainer,
     LoaderBox,
-    SearchGenre,
-    SearchArtist,
+    SelectContainer,
 
   },
   data() {

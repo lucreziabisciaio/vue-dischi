@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .album_container {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 </style>
